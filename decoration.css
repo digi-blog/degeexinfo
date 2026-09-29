@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+:root {
+    --blue: #63b3ff;
+    --text: #f4f8ff;
+    --muted: #a8b8ca;
+    --panel: rgba(8, 21, 42, 0.68);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--text);
+    font-family: "Inter", Arial, sans-serif;
+    background:
+        linear-gradient(120deg, rgba(2, 10, 25, 0.86), rgba(7, 44, 81, 0.55)),
+        url("https://image.api.playstation.com/vulcan/ap/rnd/202508/1812/14441fbf84ea08f1f027a0da46136554d19a8133241551f3.png")
+        center / cover fixed;
+}
+
+.container {
+    width: min(960px, 92%);
+    margin: auto;
+    padding: 70px 0;
+}
+
+.profile-card {
+    overflow: hidden;
+    border: 1px solid rgba(130, 195, 255, 0.28);
+    border-radius: 28px;
+    background: var(--panel);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(18px);
+}
+
+.hero {
+    padding: 70px 25px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(20, 91, 154, 0.8), rgba(5, 20, 45, 0.25));
+}
+
+.avatar {
+    display: grid;
+    width: 105px;
+    height: 105px;
+    margin: 0 auto 24px;
+    place-items: center;
+    border: 3px solid var(--blue);
+    border-radius: 50%;
+    color: #071527;
+    background: linear-gradient(135deg, #8ed0ff, #3189d2);
+    box-shadow: 0 0 35px rgba(99, 179, 255, 0.45);
+    font-size: 3.2rem;
+    font-weight: 800;
+}
+
+h1 {
+    margin-bottom: 12px;
+    color: white;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    letter-spacing: 8px;
+}
+
+.hero p {
+    color: #c4ddf5;
+    font-size: 1.05rem;
+}
+
+.content {
+    padding: 42px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: var(--blue);
+    font-size: 1.4rem;
+}
+
+.bio {
+    max-width: 700px;
+    margin-bottom: 34px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.stat {
+    padding: 24px 16px;
+    border: 1px solid rgba(99, 179, 255, 0.2);
+    border-radius: 18px;
+    text-align: center;
+    background: rgba(16, 52, 91, 0.5);
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+.stat:hover {
+    border-color: var(--blue);
+    transform: translateY(-5px);
+}
+
+.stat strong,
+.stat span {
+    display: block;
+}
+
+.stat strong {
+    margin-bottom: 8px;
+    color: #d9efff;
+}
+
+.stat span {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+h2 + .tags {
+    margin-bottom: 28px;
+}
+
+.tags span {
+    padding: 11px 17px;
+    border: 1px solid rgba(130, 195, 255, 0.25);
+    border-radius: 999px;
+    color: #dff2ff;
+    background: rgba(48, 133, 203, 0.25);
+    font-size: 0.9rem;
+}
+
+.mode-tags {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.mode-tags span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70px;
+    padding: 18px 22px;
+    border: 1px solid rgba(130, 195, 255, 0.3);
+    border-radius: 18px;
+    color: #ebf7ff;
+    background: linear-gradient(135deg, rgba(29, 107, 175, 0.7), rgba(12, 46, 78, 0.55));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+footer {
+    padding: 22px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #8095aa;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    padding: 22px;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.social-links a:hover {
+    color: var(--blue);
+}
+
+@media (max-width: 650px) {
+    .container {
+        padding: 25px 0;
+    }
+
+    .content {
+        padding: 28px 22px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .mode-tags {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        letter-spacing: 4px;
+    }
+}
